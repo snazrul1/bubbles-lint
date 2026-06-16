@@ -2,8 +2,6 @@
   <img src="assets/bubbles-logo.png" alt="Bubbles logo" width="220">
 </p>
 
-<h1 align="center">Bubbles</h1>
-
 <p align="center">
   <a href="https://pepy.tech/project/bubbles"><img alt="PyPI downloads" src="https://static.pepy.tech/badge/bubbles"></a>
   <a href="https://github.com/snazrul1/bubbles/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/snazrul1/bubbles?style=social"></a>
