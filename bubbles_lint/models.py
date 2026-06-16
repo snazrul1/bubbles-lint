@@ -5,7 +5,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Protocol
 
-from bubbles.config import Config
+from bubbles_lint.config import Config
 
 
 class Severity(str, Enum):

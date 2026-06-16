@@ -41,7 +41,11 @@ def load_config(start: Path) -> Config:
     except (OSError, tomllib.TOMLDecodeError):
         return Config()
 
-    values = data.get("tool", {}).get("bubbles", {})
+    tool_config = data.get("tool", {})
+    if not isinstance(tool_config, dict):
+        return Config()
+
+    values = tool_config.get("bubbles-lint", tool_config.get("bubbles", {}))
     if not isinstance(values, dict):
         return Config()
 

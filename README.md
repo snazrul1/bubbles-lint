@@ -1,20 +1,20 @@
 <p align="center">
-  <img src="assets/bubbles-logo.png" alt="Bubbles logo" width="220">
+  <img src="assets/bubbles-lint-logo.png" alt="Bubbles Lint logo" width="220">
 </p>
 
 <p align="center">
-  <a href="https://pepy.tech/project/bubbles"><img alt="PyPI downloads" src="https://static.pepy.tech/badge/bubbles"></a>
-  <a href="https://github.com/snazrul1/bubbles/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/snazrul1/bubbles?style=social"></a>
+  <a href="https://pepy.tech/project/bubbles-lint"><img alt="PyPI downloads" src="https://static.pepy.tech/badge/bubbles-lint"></a>
+  <a href="https://github.com/snazrul1/bubbles-lint/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/snazrul1/bubbles-lint?style=social"></a>
 </p>
 
-Bubbles is an architectural linter for Python code. It is inspired by Unix and Linux software design principles: do one thing well, keep modules small, compose simple parts, and make boundaries easy to inspect.
+Bubbles Lint is an architectural linter for Python code. It is inspired by Unix and Linux software design principles: do one thing well, keep modules small, compose simple parts, and make boundaries easy to inspect.
 
-Think of it as Ruff for architecture. It does not compete with Ruff, Black, Flake8, or Pylint. Bubbles looks for software shape problems: code that is too large, too coupled, too magical, or too monolithic.
+Think of it as Ruff for architecture. It does not compete with Ruff, Black, Flake8, or Pylint. Bubbles Lint looks for software shape problems: code that is too large, too coupled, too magical, or too monolithic.
 
 ## Installation
 
 ```bash
-pip install bubbles
+pip install bubbles-lint
 ```
 
 For local development from this repository:
@@ -28,20 +28,20 @@ pip install -e ".[dev]"
 Scan the current repository:
 
 ```bash
-bubbles scan .
+bubbles-lint scan .
 ```
 
 Emit JSON for CI systems:
 
 ```bash
-bubbles scan . --json
+bubbles-lint scan . --json
 ```
 
-Bubbles exits with status `1` when findings are present and `0` when the scan is clean.
+Bubbles Lint exits with status `1` when findings are present and `0` when the scan is clean.
 
 ## Philosophy
 
-Bubbles encourages codebases where:
+Bubbles Lint encourages codebases where:
 
 - modules have one clear responsibility
 - functions and classes stay small enough to replace
@@ -90,10 +90,10 @@ Flags common broad abstractions produced in rushed or generated code:
 
 ## Configuration
 
-Configure Bubbles in `pyproject.toml`:
+Configure Bubbles Lint in `pyproject.toml`:
 
 ```toml
-[tool.bubbles]
+[tool.bubbles-lint]
 max_file_lines = 500
 max_function_lines = 50
 max_class_methods = 10
@@ -106,14 +106,16 @@ allow_private_imports = false
 Additional knobs:
 
 ```toml
-[tool.bubbles]
+[tool.bubbles-lint]
 max_side_effect_kinds = 3
 max_ai_module_lines = 200
 max_ai_class_dependencies = 8
 excludes = ["generated"]
 ```
 
-Bubbles always ignores `.venv`, `venv`, `.git`, `__pycache__`, `build`, and `dist`.
+Bubbles Lint always ignores `.venv`, `venv`, `.git`, `__pycache__`, `build`, and `dist`.
+
+Existing `[tool.bubbles]` configs are still read for compatibility, but new projects should use `[tool.bubbles-lint]`.
 
 ## Human Output
 
@@ -150,11 +152,11 @@ Split this module into smaller bubbles with one responsibility each.
 Example GitHub Actions step:
 
 ```yaml
-- name: Install Bubbles
+- name: Install Bubbles Lint
   run: pip install .
 
 - name: Scan architecture
-  run: bubbles scan . --json
+  run: bubbles-lint scan . --json
 ```
 
 ## Development

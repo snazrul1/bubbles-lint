@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import ast
 
-from bubbles.models import Finding, ModuleContext, Severity
-from bubbles.rules.imports import imports
+from bubbles_lint.models import Finding, ModuleContext, Severity
+from bubbles_lint.rules.imports import imports
 
 
 SMELLY_MODULES = frozenset({"utils.py", "helpers.py", "manager.py", "service.py"})

@@ -4,9 +4,9 @@ import argparse
 import sys
 from pathlib import Path
 
-from bubbles.config import load_config
-from bubbles.report import format_human, format_json
-from bubbles.scanner import scan_path
+from bubbles_lint.config import load_config
+from bubbles_lint.report import format_human, format_json
+from bubbles_lint.scanner import scan_path
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -27,7 +27,7 @@ def main(argv: list[str] | None = None) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="bubbles",
+        prog="bubbles-lint",
         description="Architectural linting for small, composable Python code.",
     )
     subcommands = parser.add_subparsers(dest="command")
