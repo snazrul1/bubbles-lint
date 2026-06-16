@@ -4,7 +4,7 @@ import json
 from collections import defaultdict
 from types import MappingProxyType
 
-from bubbles.models import Finding, ScanResult
+from bubbles_lint.models import Finding, ScanResult
 
 
 RULE_TITLES = MappingProxyType({

@@ -4,8 +4,8 @@ import ast
 from collections import defaultdict
 from pathlib import Path
 
-from bubbles.models import Finding, ModuleContext, Severity
-from bubbles.rules.imports import imports
+from bubbles_lint.models import Finding, ModuleContext, Severity
+from bubbles_lint.rules.imports import imports
 
 
 class BoundaryRule:

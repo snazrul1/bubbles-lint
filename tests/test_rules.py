@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import json
 
-from bubbles.cli import main
-from bubbles.config import Config
-from bubbles.scanner import scan_path
+from bubbles_lint.cli import main
+from bubbles_lint.config import Config
+from bubbles_lint.scanner import scan_path
 
 
 def write(path, content: str) -> None:
@@ -140,7 +140,7 @@ def nope(
 
 def test_config_from_pyproject_and_cli_json(tmp_path, capsys):
     write(tmp_path / "pyproject.toml", """
-[tool.bubbles]
+[tool.bubbles-lint]
 max_file_lines = 1
 """)
     write(tmp_path / "sample.py", """
@@ -154,3 +154,18 @@ y = 2
 
     assert exit_code == 1
     assert payload["findings"][0]["rule"] == "bubble-burst/file-too-large"
+
+
+def test_legacy_bubbles_config_still_loads(tmp_path):
+    write(tmp_path / "pyproject.toml", """
+[tool.bubbles]
+max_file_lines = 1
+""")
+    write(tmp_path / "sample.py", """
+x = 1
+y = 2
+""")
+
+    result = scan_path(tmp_path)
+
+    assert "bubble-burst/file-too-large" in rules(result)

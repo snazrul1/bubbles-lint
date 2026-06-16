@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "bubbles"
+name = "bubbles-lint"
 version = "0.1.0"
 description = "A Python-first architectural linter for small, composable, Unix-like code."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { file = "LICENSE" }
 authors = [
-  { name = "Bubbles contributors" }
+  { name = "Bubbles Lint contributors" }
 ]
 keywords = ["architecture", "linter", "static-analysis", "python", "unix-philosophy"]
 classifiers = [
@@ -33,10 +33,11 @@ dependencies = []
 dev = ["pytest>=8"]
 
 [project.scripts]
-bubbles = "bubbles.cli:main"
+bubbles-lint = "bubbles_lint.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["bubbles"]
+packages = ["bubbles_lint"]
 
 [tool.pytest.ini_options]
+pythonpath = ["."]
 testpaths = ["tests"]

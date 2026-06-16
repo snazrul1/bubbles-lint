@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import ast
 
-from bubbles.models import Finding, ModuleContext, Severity
+from bubbles_lint.models import Finding, ModuleContext, Severity
 
 
 class SizeRule:

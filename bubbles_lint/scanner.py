@@ -4,10 +4,10 @@ import ast
 from pathlib import Path
 from typing import Iterable
 
-from bubbles.config import Config, load_config
-from bubbles.models import Finding, ModuleContext, Rule, ScanResult, Severity
-from bubbles.rules.boundaries import BoundaryRule, build_import_graph
-from bubbles.rules.registry import default_rules
+from bubbles_lint.config import Config, load_config
+from bubbles_lint.models import Finding, ModuleContext, Rule, ScanResult, Severity
+from bubbles_lint.rules.boundaries import BoundaryRule, build_import_graph
+from bubbles_lint.rules.registry import default_rules
 
 
 def scan_path(path: Path, config: Config | None = None, rules: Iterable[Rule] | None = None) -> ScanResult:
@@ -32,7 +32,7 @@ def scan_path(path: Path, config: Config | None = None, rules: Iterable[Rule] | 
                 path=_relative(file_path, root),
                 line=error.lineno or 1,
                 message=f"Could not parse Python file: {error.msg}.",
-                suggestion="Fix the syntax error before Bubbles can inspect this module's architecture.",
+                suggestion="Fix the syntax error before Bubbles Lint can inspect this module's architecture.",
             ))
             continue
         except (OSError, UnicodeDecodeError) as error:
