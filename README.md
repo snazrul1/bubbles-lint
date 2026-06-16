@@ -3,7 +3,6 @@
 </p>
 
 <p align="center">
-  <a href="https://pepy.tech/project/bubbles-lint"><img alt="PyPI downloads" src="https://static.pepy.tech/badge/bubbles-lint"></a>
   <a href="https://github.com/snazrul1/bubbles-lint/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/snazrul1/bubbles-lint?style=social"></a>
 </p>
 
