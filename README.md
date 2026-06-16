@@ -2,10 +2,6 @@
   <img src="assets/bubbles-lint-logo.png" alt="Bubbles Lint logo" width="220">
 </p>
 
-<p align="center">
-  <a href="https://github.com/snazrul1/bubbles-lint/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/snazrul1/bubbles-lint?style=social"></a>
-</p>
-
 Bubbles Lint is an architectural linter for Python code. It is inspired by Unix and Linux software design principles: do one thing well, keep modules small, compose simple parts, and make boundaries easy to inspect.
 
 Think of it as Ruff for architecture. It does not compete with Ruff, Black, Flake8, or Pylint. Bubbles Lint looks for software shape problems: code that is too large, too coupled, too magical, or too monolithic.
