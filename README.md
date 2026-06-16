@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/bubbles-lint-logo.png" alt="Bubbles Lint logo" width="220">
+  <img src="https://raw.githubusercontent.com/snazrul1/bubbles-lint/main/assets/bubbles-lint-logo.png" alt="Bubbles Lint logo" width="220">
 </p>
 
 Bubbles Lint is an architectural linter for Python code. It is inspired by Unix and Linux software design principles: do one thing well, keep modules small, compose simple parts, and make boundaries easy to inspect.
